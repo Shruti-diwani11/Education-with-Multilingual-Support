@@ -1,0 +1,106 @@
+.page {
+  min-height: 100vh;
+  background: #7C9CC5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 92%;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 24px;
+  display: flex;
+  overflow: hidden;
+}
+
+.left {
+  flex: 1;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left img {
+  width: 80%;
+}
+
+.right {
+  flex: 1;
+  background: #DFEEFA;
+  padding: 48px;
+}
+
+/* BRAND WRAPPER */
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* center horizontally */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* CIRCULAR LOGO */
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #0b77c5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: #0b77c5;
+  margin-bottom: 8px;
+}
+
+/* TAGLINE */
+.tagline {
+  font-size: 14px;
+  color: #666;
+}
+
+
+.subtitle {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  color: #1f2937;     /* darker text */
+  background: #ffffff;
+}
+
+.registerBtn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 18px;
+}
+
+.footer span {
+  color: #3b82f6;
+  cursor: pointer;
+}
