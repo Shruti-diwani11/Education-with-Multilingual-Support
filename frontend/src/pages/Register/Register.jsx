@@ -99,7 +99,7 @@ export default function Register() {
           <p className={styles.footer}>
             Already have an account?{" "}
             <span onClick={() => navigate("/login")}>
-              Sign In
+              Login
             </span>
           </p>
         </div>

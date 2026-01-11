@@ -1,0 +1,248 @@
+.languageDropdown {
+  position: relative;
+  width: 100%;
+  z-index: 100;
+}
+
+.dropdownButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(51, 65, 85, 0.5);
+  border: 1.5px solid rgba(148, 163, 184, 0.2);
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.dropdownButton:hover {
+  background: rgba(51, 65, 85, 0.8);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.dropdownButton:active {
+  transform: translateY(0);
+}
+
+.selectedFlag {
+  font-size: 20px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.selectedName {
+  flex: 1;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.chevron {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.7;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1.5px solid rgba(59, 130, 246, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(59, 130, 246, 0.1);
+  z-index: 9999;
+  overflow: hidden;
+  animation: dropdownSlideIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(20px);
+}
+
+@keyframes dropdownSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.menuHeader {
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.searchIcon {
+  color: #3b82f6;
+  opacity: 0.8;
+}
+
+.menuTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e1;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.languageList {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.languageList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.languageList::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 10px;
+}
+
+.languageList::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 10px;
+}
+
+.languageList::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+.languageOption {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.languageOption::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #3b82f6, #2563eb);
+  transform: scaleY(0);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 2px 2px 0;
+}
+
+.languageOption:hover {
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateX(4px);
+}
+
+.languageOption:hover::before {
+  transform: scaleY(1);
+}
+
+.languageOption.active {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05));
+}
+
+.languageOption.active::before {
+  transform: scaleY(1);
+}
+
+.languageFlag {
+  font-size: 26px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.languageOption:hover .languageFlag {
+  transform: scale(1.1);
+}
+
+.languageInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.languageName {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+}
+
+.languageNative {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.checkIcon {
+  color: #3b82f6;
+  animation: checkBounce 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes checkBounce {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Compact variant for use in header */
+.compact .dropdownButton {
+  padding: 8px 12px;
+  font-size: 13px;
+  min-width: 120px;
+}
+
+.compact .selectedFlag {
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dropdownMenu {
+    width: 95%;
+    max-width: none;
+  }
+
+  .languageList {
+    max-height: 50vh;
+  }
+}
